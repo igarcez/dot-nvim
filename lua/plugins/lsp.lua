@@ -89,10 +89,10 @@ return {
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 			-- Lua
-			require("lspconfig")["lua_ls"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				settings = {
+            vim.lsp.config("lua_ls", {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
 					Lua = {
 						completion = {
 							callSnippet = "Replace",
@@ -107,43 +107,15 @@ return {
 							},
 						},
 					},
-				},
-			})
+                }
+            })
+            vim.lsp.enable({"lua_ls"})
 
-			require("lspconfig")["ts_ls"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities
-			})
-
-			-- Python
-			require("lspconfig")["pylsp"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				settings = {
-					pylsp = {
-						plugins = {
-							flake8 = {
-								enabled = true,
-								maxLineLength = 88, -- Black's line length
-							},
-							-- Disable plugins overlapping with flake8
-							pycodestyle = {
-								enabled = false,
-							},
-							mccabe = {
-								enabled = false,
-							},
-							pyflakes = {
-								enabled = false,
-							},
-							-- Use Black as the formatter
-							autopep8 = {
-								enabled = false,
-							},
-						},
-					},
-				},
-			})
+            -- TypeScript
+            vim.lsp.config("ts_ls", {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
 		end,
 	},
 }
