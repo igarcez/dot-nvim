@@ -112,7 +112,7 @@ return {
             vim.lsp.enable({"lua_ls"})
 
             -- TypeScript
-            vim.lsp.config("ts_ls", {
+            vim.lsp.config("typescript-tools", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
