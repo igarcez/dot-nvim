@@ -20,6 +20,7 @@ return {
 					"ts_ls",
 				},
 				automatic_installation = true,
+                automatic_enable = true,
 			})
 
 			-- Quick access via keymap
@@ -59,6 +60,7 @@ return {
 			vim.diagnostic.config(config)
 
 			-- This function gets run when an LSP connects to a particular buffer.
+            -- todo how to attach this to all clients?
 			local on_attach = function(client, bufnr)
 				local lsp_map = require("helpers.keys").lsp_map
 
