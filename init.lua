@@ -11,3 +11,4 @@ require("core.options")
 local o = vim.opt
 
 o.colorcolumn = "80"
+o.clipboard = "unnamedplus"
