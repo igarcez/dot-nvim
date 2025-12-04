@@ -1,10 +1,10 @@
 local map = require("helpers.keys").map
 
 -- Blazingly fast way out of insert mode
-map("i", "jk", "<esc>")
+-- map("i", "jk", "<esc>")
 
 -- quick command prompt
-map("n", ";", ":")
+-- map("n", ";", ":")
 
 -- Quick access to some common actions
 map("n", "<leader>fw", "<cmd>w<cr>", "Write")
@@ -17,8 +17,8 @@ map("n", "<leader>dw", "<cmd>close<cr>", "Window")
 map('n', 'gx', vim.diagnostic.open_float, "Show diagnostics under cursor")
 
 -- Easier access to beginning and end of lines
-map("n", "<M-h>", "^", "Go to beginning of line")
-map("n", "<M-l>", "$", "Go to end of line")
+-- map("n", "<M-h>", "^", "Go to beginning of line")
+-- map("n", "<M-l>", "$", "Go to end of line")
 
 -- Better window navigation
 map("n", "<C-h>", "<C-w><C-h>", "Navigate windows to the left")
